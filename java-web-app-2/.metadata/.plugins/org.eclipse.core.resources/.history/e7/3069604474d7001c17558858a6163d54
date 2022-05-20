@@ -1,0 +1,32 @@
+package com.ab.controllers;
+
+import com.ab.models.Customer;
+import com.ab.services.CustomerService;
+
+public class CustomerController {
+	
+	private CustomerService customerService;
+
+	public CustomerController(CustomerService customerService) {
+
+		this.customerService = customerService;
+	}
+	
+	public int registerCustomer(Customer c) {
+		
+		return this.customerService.registerCustomer(c);
+	}
+			
+			
+	public Customer loginCustomer(String username,String password) {
+		
+		return this.customerService.customerLogin(username, password);
+	}
+
+	
+	public void updateFirstName(Customer c, String firstname) {
+		
+		 this.customerService.updateFirstName(c, firstname);
+			
+		}
+}

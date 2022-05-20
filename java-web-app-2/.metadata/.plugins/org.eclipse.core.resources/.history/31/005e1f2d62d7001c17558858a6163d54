@@ -1,0 +1,46 @@
+package com.ab.services;
+
+import java.util.List;
+
+import com.ab.daos.CustomerDAO;
+import com.ab.models.Customer;
+
+public class CustomerService {
+	
+	
+	
+	private CustomerDAO customerDAO;
+	
+	
+	// Code to write DI using constructor 
+	
+	public CustomerService(CustomerDAO customerDAO) {
+		
+		this.customerDAO = customerDAO;
+	}
+	
+	
+	// Write some business methods
+	
+	public int registerCustomer(Customer c) {
+		
+		// As part of registration you may consider writing some code to encrypt user password
+		return this.customerDAO.register(c);
+		
+	}
+	
+	
+	public Customer customerLogin(String username, String password) {
+		
+		
+		return this.customerDAO.login(username, password);
+		
+	}
+	
+	public void updateFirstNAme(Customer c, String firstname) {
+		
+	 this.customerDAO.updateFirstName(c, firstname);
+		
+	}
+	
+}

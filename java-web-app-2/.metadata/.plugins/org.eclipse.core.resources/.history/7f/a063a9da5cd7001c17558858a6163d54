@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Account Details</title>
+   <form action="http://localhost:8080/books/RegisterServlet" method="POST">
+   
+  <div class="container">
+    <h1>Edit Account Details</h1>
+    <p>View and Edit your account details below!</p>
+    <hr>
+
+    <label for="firstname"><b>First Name: </b></label>
+    <input type="text" placeholder="Enter" name="firstname" id="firstname" required>
+
+    <label for="lastname"><b>Last Name: </b></label>
+    <input type="text" placeholder="Enter" name="lastname" id="lastname" required>
+    
+    <label for="username"><b>Username: </b></label>
+    <input type="text" placeholder="Enter" name="username" id="username" required>
+    
+    <label for="password"><b>Password: </b></label>
+    <input type="text" placeholder="Enter" name="password" id="password" required>
+    
+    <label for="delivery"><b>Delivery Address: </b></label>
+    <input type="text" placeholder="Enter" name="delivery" id="delivery" required>
+    
+    <label for="email"><b>Email: </b></label>
+    <input type="text" placeholder="Enter" name="email" id="email" required>
+    
+    <hr>
+
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+</form>
+
+</head>
+<body>
+
+</body>
+</html>

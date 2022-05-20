@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome!</title>
+
+<style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+
+</style>
+
+</head>
+<body>
+    <h1 action="http://localhost:8080/books/LoginServlet" method="POST"> 
+   
+    <% String firstname = (String)session.getAttribute("loggedInCustomer"); %>
+
+    Hello <%= " " + firstname + "!" %>
+    
+    </h1>
+
+	View Order History  <a href="register.jsp"> Here! </a> <br>
+   
+   	Edit Account Details <a href="edit_account.jsp"> Here! </a> <br>
+   	
+   	Browse all books!! <a href="http://localhost:8080/books/LoadAllBooksServlet"> Click HERE </a> 
+
+</body>
+</html>

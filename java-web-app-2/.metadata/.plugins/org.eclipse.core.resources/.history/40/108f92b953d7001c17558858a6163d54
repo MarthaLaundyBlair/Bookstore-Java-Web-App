@@ -1,0 +1,30 @@
+package com.ab.controllers;
+
+import java.util.List;
+
+import com.ab.models.Book;
+import com.ab.services.BookService;
+
+public class BookController {
+	
+	private BookService bookService;
+
+	public BookController(BookService bookService) {
+
+		this.bookService = bookService;
+	}
+	
+	public List<Book> loadRegisteredBooks(){
+		
+		return this.bookService.loadRegisteredBooks();
+	}
+	
+	
+	public String loadRegisteredBooksString() {
+		
+		return this.bookService.loadRegisteredBooksString();
+		
+	}
+	
+
+}

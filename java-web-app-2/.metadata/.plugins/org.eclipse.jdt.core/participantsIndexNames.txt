@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\Users\Martha\Documents\java-web-app-2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4067920847.index
+\book-project\src\main\resources
+C:\Users\Martha\Documents\java-web-app-2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1179823871.index
+\books\src\main\java
+C:\Users\Martha\Documents\java-web-app-2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\503674600.index
+\book-store\src\main\java
+C:\Users\Martha\Documents\java-web-app-2\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2456959596.index
+\books\src\main\java

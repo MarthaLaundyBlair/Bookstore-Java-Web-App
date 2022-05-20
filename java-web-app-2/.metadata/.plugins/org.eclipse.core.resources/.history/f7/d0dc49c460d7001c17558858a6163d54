@@ -1,0 +1,120 @@
+package com.ab.daos;
+
+//change this bit!!!
+import java.util.*;
+
+import com.ab.models.Customer;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class CustomerDAOImpl implements CustomerDAO{
+	
+	private Connection con;
+	
+	private PreparedStatement pst;
+	
+	private ResultSet rs;
+	
+	
+	public CustomerDAOImpl() {
+			
+			try {
+				
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				
+				
+				this.con = DriverManager.getConnection("jdbc:mysql://localhost/books","root",""); 
+				
+				
+			}
+			catch(ClassNotFoundException e) {
+				
+				System.out.println(e);
+				
+			}
+			catch(SQLException e) {
+				
+				System.out.println(e);
+				
+			}
+			
+		}
+	
+
+	public int register(Customer c) {
+		
+		try {
+			
+			
+			this.pst = this.con.prepareStatement("INSERT into customer(firstname,lastname,username, password, email, delivery) VALUES(?,?,?,?,?,?)");
+			
+			this.pst.setString(1, c.getFirstName());
+			this.pst.setString(2, c.getLastName());
+			this.pst.setString(3, c.getUsername());
+			this.pst.setString(4, c.getPassword());
+			this.pst.setString(5, c.getEmail());
+			this.pst.setString(6, c.getDeliveryAdress());
+			
+			int i = this.pst.executeUpdate();
+			
+			return i;
+			
+			
+		}
+		catch(SQLException e) {
+			
+			System.out.println(e);
+			return -1;
+			
+		}
+		
+	}
+	
+public Customer login(String username, String password) {
+		
+		
+		try {
+			
+		  this.pst = this.con.prepareStatement("SELECT * from customer WHERE username = ? and password = ? " );
+		  
+		  
+		  this.pst.setString(1, username);
+		  this.pst.setString(2, password);
+		  
+		  
+		  this.rs = this.pst.executeQuery();
+		  
+		  
+		  if(rs.next()) {
+			  Customer c = new Customer(rs.getInt("customer_id"),
+					  					rs.getString(2),
+					  					rs.getString(3),
+					  					rs.getString(4),
+					  					rs.getString(5),
+					  					rs.getString(6),
+					  					rs.getString(7)
+					  				  );
+			  
+			  return c;
+		  }
+			
+		}
+		catch(SQLException e) {
+			
+			System.out.println(e);
+			return null;
+		}
+		
+		return null;
+		
+	}
+
+
+}
+
+
+
