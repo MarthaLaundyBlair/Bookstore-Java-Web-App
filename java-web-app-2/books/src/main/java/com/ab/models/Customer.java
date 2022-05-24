@@ -1,5 +1,7 @@
 package com.ab.models;
 
+import java.util.List;
+
 public class Customer {
 	
 	private int customerId;
@@ -9,8 +11,9 @@ public class Customer {
 	private String password;
 	private String email;
 	private String deliveryAdress;
-	
-	
+	private List<Order> orders;
+
+
 	public Customer() {}
 
 
@@ -106,6 +109,14 @@ public class Customer {
 		this.deliveryAdress = deliveryAdress;
 	}
 
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 
 	@Override
 	public String toString() {

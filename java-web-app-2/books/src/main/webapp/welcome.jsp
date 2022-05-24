@@ -28,7 +28,7 @@ a {
     
     </h1>
 
-	View Order History  <a href="register.jsp"> Here! </a> <br>
+	View Order History  <a href="http://localhost:8080/books/OrdersServlet"> Here! </a> <br>
    
    	Edit Account Details <a href="edit_account.jsp"> Here! </a> <br>
    	
